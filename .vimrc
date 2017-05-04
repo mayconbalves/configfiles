@@ -95,6 +95,7 @@ Plug 'danro/rename.vim'
 Plug 'tpope/vim-surround'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-endwise'
+Plug 'vimlab/neojs'
 
 " Use vim-ruby, the default ruby syntax highlighting had slow regexp
 " and long lines were causing a sort of lag.
