@@ -101,6 +101,8 @@ export NVM_DIR="$HOME/.nvm"
  alias fpush='git push origin HEAD -f'
  alias gb='git branch'
  alias gco='git checkout'
+ alias gc='git commit'
+ alias gaa='git add'
 
 # #  Alias directories
  alias down='cd ~/Downloads'
