@@ -89,7 +89,7 @@ export NVM_DIR="$HOME/.nvm"
 #  alias zshconfig="mate ~/.zshrc"
 #  alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# # Git aliases
+## Git aliases
  alias gs='git status'
  alias gcm='git checkout master'
  alias grm='git rebase master'
@@ -103,20 +103,23 @@ export NVM_DIR="$HOME/.nvm"
  alias gco='git checkout'
  alias gc='git commit'
  alias gaa='git add'
-
-# #  Alias directories
+##  Alias directories
  alias down='cd ~/Downloads'
  alias docs='cd ~/Documents'
  alias home='cd ~'
- alias estagiarios='cd ~/superjobs/estagiarios'
- alias bicos='cd ~/superjobs/bicos'
+
+## Alias terminal
+ alias c='clear'
 
 #  Ruby
 # export PATH="$HOME/.rbenv/bin:$PATH"
 # eval "$(rbenv init -)"
 # export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
+git config --global credential.helper'cache--timeout=300000000'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # This loads nvm
+
+export PATH=/home/maycon/bin:/usr/local/bin:/home/maycon/bin:/home/maycon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/maycon/.vimpkg/bin
