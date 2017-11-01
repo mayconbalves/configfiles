@@ -1,31 +1,26 @@
 set shell=/bin/sh
+set tabstop=2
+set shiftwidth=2
 
 " Leader key
 let mapleader = " "
+let g:jsx_ext_required = 0
 
 call plug#begin('~/.vim/plugged')
-
-" Snippets (Ruby, Rails, Html, Python, etc...)
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
-
 
 " Emmet - Snippts html
 Plug 'mattn/emmet-vim'
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
 
 " Colors
 Plug 'nanotech/jellybeans.vim'
 Plug 'zefei/simple-dark'
-Plug 'chriskempson/tomorrow-theme'
 
 " Manages indentation
 Plug 'tpope/vim-sleuth'
+Plug 'yggdroot/indentline'
 
 " dependency for xolox plugins
 Plug 'xolox/vim-misc'
@@ -51,8 +46,6 @@ nmap ga <Plug>(EasyAlign)
 " Dependencies for the gem below
 Plug 'tmhedberg/matchit'
 Plug 'kana/vim-textobj-user'
-" Select code blocks in ruby
-Plug 'nelstrom/vim-textobj-rubyblock'
 
 " Run rspec
 " Run tests
@@ -72,17 +65,10 @@ nmap <leader>tb :TagbarToggle<CR>
 Plug 'tpope/vim-repeat'
 
 " General plugins
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer --gocode-completer --system-libclang'  }
 Plug 'jiangmiao/auto-pairs'
-" Plug 'einars/js-beautify', { 'for': 'javascript'  }
-" Plug 'wookiehangover/jshint.vim', { 'for': 'javascript'  }
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'scrooloose/syntastic'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-dispatch', { 'for': ['ruby', 'spec'] }
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-bundler'
@@ -90,22 +76,24 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'rking/ag.vim'
-Plug 'kchmck/vim-coffee-script'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-surround'
-Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-endwise'
-Plug 'vimlab/neojs'
-
-" Use vim-ruby, the default ruby syntax highlighting had slow regexp
-" and long lines were causing a sort of lag.
-Plug 'vim-ruby/vim-ruby'
+Plug 'w0rp/ale'
+Plug 'mxw/vim-jsx'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'michaelghinrichs/vim-redux-modules-snippets'
+Plug 'isruslan/vim-es6'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'crusoexia/vim-monokai'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
 " Colorscheme
-" syntax on
-colors jellybeans
+syntax on
+colors onedark
 set t_Co=256
 
 " Preferences
@@ -130,6 +118,9 @@ set ignorecase  " case insensitive search
 set smartcase   " If a capital letter is included in search, make it case-sensitive
 set nohlsearch  " dont highlight search results
 set timeoutlen=1000 ttimeoutlen=0 " Remove 'esc' delay
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Start search
 noremap <leader>r :%s/
@@ -165,14 +156,12 @@ cmap w!! w !sudo tee % >/dev/null
 " Some Linux distributions  filetype in /etc/vimrc.
 " " Clear filetype flags before changing runtimepath to force Vim to reload
 " them.
-filetype off
-filetype plugin indent off
+filetype on
+filetype plugin indent on
 set runtimepath+=/usr/local/go/misc/vim
 
 " use goimports after save"
 " let g:go_fmt_command = "goimports"
-filetype plugin indent on
-syntax on
 
 " Relative numbers
 set relativenumber " use relative numbers
@@ -228,9 +217,6 @@ autocmd BufNewFile,BufRead *.ejs set syntax=html
 
 " Add spell checking and wrap at 72 columns git commit message
 autocmd Filetype gitcommit setlocal spell textwidth=72
-
-" Golang fake tab to 4 spaces
-au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 " Run buffer in postgres as a query
 map <leader>rq :w !psql -d PremiosOnline_development -f -<cr>
