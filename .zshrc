@@ -1,17 +1,16 @@
- # This loads nvm
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh"
 
 
 # Path to your oh-my-zsh installation.
  export ZSH=$HOME/.oh-my-zsh
-#
 #  Set name of the theme to load.
 #  Look in ~/.oh-my-zsh/themes/
 #  Optionally, if you set this to "random", it'll load a random theme each
 #  time that oh-my-zsh is loaded.
- ZSH_THEME="robbyrussell"
+
+ZSH_THEME="cloud"
+
 #
 #  Uncomment the following line to use case-sensitive completion.
 #  CASE_SENSITIVE="true"
@@ -89,37 +88,38 @@ export NVM_DIR="$HOME/.nvm"
 #  alias zshconfig="mate ~/.zshrc"
 #  alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
 ## Git aliases
- alias gs='git status'
- alias gcm='git checkout master'
- alias grm='git rebase master'
- alias gh='git hist'
- alias gl='git log'
- alias gp='git pull'
- alias gpo='git pull origin'
- alias gpush='git push origin HEAD'
- alias fpush='git push origin HEAD -f'
- alias gb='git branch'
- alias gco='git checkout'
- alias gc='git commit'
- alias gaa='git add'
+alias gs='git status'
+alias gcm='git checkout master'
+alias grm='git rebase master'
+alias gh='git hist'
+alias gl='git log'
+alias gf='git fetch'
+alias gp='git pull'
+alias gpo='git pull origin'
+alias gpush='git push origin HEAD'
+alias fpush='git push origin HEAD -f'
+alias gb='git branch'
+alias gbc='git checkout -b'
+alias gco='git checkout'
+alias gc='git commit'
+alias gaa='git add'
+
 ##  Alias directories
- alias down='cd ~/Downloads'
- alias docs='cd ~/Documents'
- alias home='cd ~'
+alias down='cd ~/Downloads'
+alias docs='cd ~/Documents'
+alias home='cd ~'
 
 ## Alias terminal
- alias c='clear'
+alias c='clear'
 
-#  Ruby
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
-git config --global credential.helper'cache--timeout=300000000'
+git config --global credential.helper 'cache --timeout=300000000'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # This loads nvm
 
 export PATH=/home/maycon/bin:/usr/local/bin:/home/maycon/bin:/home/maycon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/maycon/.vimpkg/bin
+
+export PATH=/home/maycon/bin:/usr/local/bin:/home/maycon/bin:/home/maycon/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/maycon/.vimpkg/bin:/home/maycon/.vimpkg/bin
