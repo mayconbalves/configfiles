@@ -1,6 +1,18 @@
 set shell=/bin/sh
 set tabstop=2
 set shiftwidth=2
+set textwidth=80
+set colorcolumn=+1
+
+let g:user_emmet_mode='n'    "only enable normal mode functions.
+let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+let g:user_emmet_mode='a'
+let g:vim_jsx_pretty_colorful_config = 1
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+let g:user_emmet_leader_key='<C-Z>'
 
 " Leader key
 let mapleader = " "
@@ -17,6 +29,13 @@ let g:snipMate.scope_aliases = {}
 " Colors
 Plug 'nanotech/jellybeans.vim'
 Plug 'zefei/simple-dark'
+Plug 'vim-scripts/Zenburn'
+Plug 'dikiaap/minimalist'
+Plug 'morhetz/gruvbox'
+Plug 'crusoexia/vim-monokai'
+Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula'  }
+Plug 'liuchengxu/space-vim-dark'
 
 " Manages indentation
 Plug 'tpope/vim-sleuth'
@@ -80,20 +99,35 @@ Plug 'danro/rename.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'w0rp/ale'
-Plug 'mxw/vim-jsx'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
-Plug 'michaelghinrichs/vim-redux-modules-snippets'
 Plug 'isruslan/vim-es6'
-Plug 'chemzqm/vim-jsx-improve'
-Plug 'crusoexia/vim-monokai'
-Plug 'joshdick/onedark.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'othree/yajs.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+
+" html
+" HTML Bundle
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
+
+
+"" javascript
+"" Javascript Bundle
+Plug 'jelera/vim-javascript-syntax'"
 
 call plug#end()
 
 " Colorscheme
 syntax on
-colors onedark
+colors space-vim-dark
 set t_Co=256
 
 " Preferences
