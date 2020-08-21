@@ -8,6 +8,7 @@ let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 let g:user_emmet_mode='a'
 let g:vim_jsx_pretty_colorful_config = 1
+let g:coc_global_extensions = [ 'coc-tsserver' ]
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -20,8 +21,19 @@ let g:jsx_ext_required = 0
 
 call plug#begin('~/.vim/plugged')
 
+" prettier "
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" ts and graphql "
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+
 " Emmet - Snippts html
 Plug 'mattn/emmet-vim'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
