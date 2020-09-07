@@ -3,6 +3,7 @@ set tabstop=2
 set shiftwidth=2
 set textwidth=80
 set colorcolumn=+1
+set backspace=indent,eol,start
 
 let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_mode='inv'  "enable all functions, which is equal to
