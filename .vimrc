@@ -3,13 +3,14 @@ set tabstop=2
 set shiftwidth=2
 set textwidth=80
 set colorcolumn=+1
-set backspace=indent,eol,start
+set expandtab
 
 let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 let g:user_emmet_mode='a'
 let g:vim_jsx_pretty_colorful_config = 1
 let g:coc_global_extensions = [ 'coc-tsserver' ]
+let NERDTreeShowHidden=1
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -19,6 +20,14 @@ let g:user_emmet_leader_key='<C-Z>'
 " Leader key
 let mapleader = " "
 let g:jsx_ext_required = 0
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+call vundle#end()
+filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
@@ -273,3 +282,4 @@ map ,, :bnext<cr>
 map ,. :bprevious<cr>
 
 command! Vb normal! <C-v>
+Plugin 'wakatime/vim-wakatime'
