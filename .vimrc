@@ -18,18 +18,58 @@ let mapleader = " "
 let g:jsx_ext_required = 0
 
 " set nocompatible
-filetype off
+filetype on
+set backspace=indent,eol,start
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'valloric/youcompleteme'
-call vundle#end()
 filetype plugin indent on
 
-call plug#begin('~/.vim/plugged')
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
-Plug 'valloric/youcompleteme'
+let g:coc_global_extensions = [
+	\ 'coc-tsserver'
+  \]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+	let g:coc_global_extensions += ['coc-eslint']
+endif
+
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+function! ShowDocIfNoDiagnostic(timer_id)
+   if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+     silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
+
+call plug#begin('~/.vim/plugged')
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main'  }
+Plug 'jparise/vim-graphql'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'gabesoft/vim-ags'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
 " prettier "
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -62,7 +102,6 @@ Plug 'yggdroot/indentline'
 " Airline
 Plug 'bling/vim-airline'
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
 
 " Gists plugin
 Plug 'mattn/webapi-vim' " Dependency
@@ -149,7 +188,6 @@ set autoindent
 set copyindent
 set number " line numbers
 set showmode " always show mode
-set noshowmode  " dont show default status line
 set cursorline " highlight current line
 set history=100
 set undolevels=10000  " Use more levels of undo"
