@@ -69,7 +69,6 @@ Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'gabesoft/vim-ags'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 
 " prettier "
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
