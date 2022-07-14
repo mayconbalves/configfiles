@@ -31,6 +31,17 @@ let g:coc_global_extensions = [
 	\ 'coc-tsserver'
   \]
 
+let g:ale_fixers = {
+	\   'javascript': ['eslint'],
+	\   'typescript': ['eslint'],
+	\   'css': ['eslint'],
+\}
+
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
@@ -59,6 +70,8 @@ nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
 
 call plug#begin('~/.vim/plugged')
 Plug 'pangloss/vim-javascript'
@@ -69,66 +82,35 @@ Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'gabesoft/vim-ags'
+Plug 'dense-analysis/ale'
 
 " prettier "
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " ts and graphql "
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'jparise/vim-graphql'        " GraphQL syntax
-
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " react
 Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'justinj/vim-react-snippets'
 Plug 'bentayloruk/vim-react-es6-snippets'
 
 " Colors
-Plug 'crusoexia/vim-monokai'
-Plug 'joshdick/onedark.vim'
 Plug 'liuchengxu/space-vim-dark'
-
-" Manages indentation
-Plug 'tpope/vim-sleuth'
-Plug 'yggdroot/indentline'
 
 " Airline
 Plug 'bling/vim-airline'
-set laststatus=2
 
 " Gists plugin
 Plug 'mattn/webapi-vim' " Dependency
-Plug 'mattn/gist-vim'
-let g:gist_show_privates = 1
-let g:gist_post_private = 1
 
 " Alignhment
 Plug 'junegunn/vim-easy-align'
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" Dependencies for the gem below
-Plug 'tmhedberg/matchit'
-Plug 'kana/vim-textobj-user'
-
-" Run rspec
-" Run tests
-Plug 'janko-m/vim-test'
-nmap <silent> <leader>tt :TestFile<CR>
-nmap <silent> <leader>ts :TestNearest<CR>
-nmap <silent> <leader>ta :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
 
 " Tagbar
 Plug 'majutsushi/tagbar'
-nmap <leader>tb :TagbarToggle<CR>
 
 " This plugin is needed to enable repeat `.` in plugins like surround
 " also from tpope
@@ -137,11 +119,8 @@ Plug 'tpope/vim-repeat'
 " " General plugins
 Plug 'jiangmiao/auto-pairs'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-bundler'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/MatchTagAlways'
@@ -153,13 +132,7 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'isruslan/vim-es6'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'othree/yajs.vim'
-Plug 'maxmellon/vim-jsx-pretty'
 
 " HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
@@ -178,6 +151,15 @@ call plug#end()
 syntax on
 colors space-vim-dark
 set t_Co=256
+set laststatus=2
+nmap <silent> <leader>tt :TestFile<CR>
+nmap <silent> <leader>ts :TestNearest<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+nmap <leader>tb :TagbarToggle<CR>
 
 " Preferences
 set visualbell    " don't beep
