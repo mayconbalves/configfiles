@@ -1,0 +1,36 @@
+{
+  "editor.minimap.maxColumn": 100,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.validate": ["typescript", "javascript", "html", "css"],
+  "emmet.syntaxProfiles" : {
+    "javascript" : "jsx"
+  },
+  "editor.fontSize" : 12,
+  "javascript.suggest.autoImports" : true,
+  "extensions.ignoreRecommendations" : true,
+  "editor.parameterHints.enabled" : false,
+  "editor.renderLineHighlight" : "gutter",
+  "editor.lineHeight" : 22,
+  "material-icon-theme.languages.associations" : {
+    "dotenv" : "tune"
+  },
+  "editor.suggestSelection" : "first",
+  "editor.fontLigatures" : true,
+  "emmet.includeLanguages" : {
+    "javascript" : "javascriptreact"
+  },
+  "editor.semanticHighlighting.enabled" : false,
+  "breadcrumbs.enabled" : true,
+  "editor.fontFamily" : "JetBrains Mono",
+  "files.exclude" : {
+    "**\/CVS" : true,
+    "**\/.DS_Store" : true,
+    "**\/.hg" : true,
+    "**\/.svn" : true,
+    "**\/.git" : true
+  },
+  "tabnine.experimentalAutoImports" : true
+}
