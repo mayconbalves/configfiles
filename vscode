@@ -1,19 +1,19 @@
 {
   "editor.minimap.maxColumn": 100,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always"
   },
   "eslint.validate": ["typescript", "javascript", "html", "css"],
   "emmet.syntaxProfiles" : {
     "javascript" : "jsx"
   },
-  "editor.fontSize" : 12,
+  "editor.fontSize" : 13,
   "javascript.suggest.autoImports" : true,
   "extensions.ignoreRecommendations" : true,
   "editor.parameterHints.enabled" : false,
   "editor.renderLineHighlight" : "gutter",
-  "editor.lineHeight" : 22,
+  "editor.lineHeight" : 23,
   "material-icon-theme.languages.associations" : {
     "dotenv" : "tune"
   },
