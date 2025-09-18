@@ -1,36 +1,47 @@
 {
   "editor.minimap.maxColumn": 100,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
-    "source.organizeImports": "always"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
   },
-  "eslint.validate": ["typescript", "javascript", "html", "css"],
-  "emmet.syntaxProfiles" : {
-    "javascript" : "jsx"
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "html",
+    "css"
+  ],
+
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "typescript": "tsx"
   },
-  "editor.fontSize" : 13,
-  "javascript.suggest.autoImports" : true,
-  "extensions.ignoreRecommendations" : true,
-  "editor.parameterHints.enabled" : false,
-  "editor.renderLineHighlight" : "gutter",
-  "editor.lineHeight" : 23,
-  "material-icon-theme.languages.associations" : {
-    "dotenv" : "tune"
+  "editor.fontSize": 13,
+  "javascript.suggest.autoImports": true,
+  "extensions.ignoreRecommendations": true,
+  "editor.parameterHints.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.lineHeight": 23,
+  "material-icon-theme.languages.associations": {
+    "dotenv": "tune"
   },
-  "editor.suggestSelection" : "first",
-  "editor.fontLigatures" : true,
-  "emmet.includeLanguages" : {
-    "javascript" : "javascriptreact"
+  "editor.suggestSelection": "first",
+  "editor.fontLigatures": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
   },
-  "editor.semanticHighlighting.enabled" : false,
-  "breadcrumbs.enabled" : true,
-  "editor.fontFamily" : "JetBrains Mono",
-  "files.exclude" : {
-    "**\/CVS" : true,
-    "**\/.DS_Store" : true,
-    "**\/.hg" : true,
-    "**\/.svn" : true,
-    "**\/.git" : true
-  },
-  "tabnine.experimentalAutoImports" : true
+  "editor.semanticHighlighting.enabled": false,
+  "breadcrumbs.enabled": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "files.exclude": {
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/.git": true
+  }
 }
